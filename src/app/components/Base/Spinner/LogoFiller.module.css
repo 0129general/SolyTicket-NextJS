@@ -1,0 +1,101 @@
+.logo-container {
+  position: relative;
+  width: 140px;
+  /* Adjusted to the size of the spinning circle */
+  height: 140px;
+  /* Adjusted to the size of the spinning circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 120px;
+  /* Size of the logo */
+  height: 120px;
+  /* Size of the logo */
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  animation: fillAnimation 5s infinite;
+}
+
+.circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180px;
+  /* Size of the spinning circle */
+  height: 180px;
+  /* Size of the spinning circle */
+  border: 2px solid #fff;
+  /* White circle */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spinAnimation 5s linear infinite;
+}
+
+.dot {
+  position: absolute;
+  width: 10px;
+  /* Size of the dots */
+  height: 10px;
+  /* Size of the dots */
+  background-color: #000;
+  /* Default dot color */
+  border-radius: 50%;
+}
+
+.dot1 {
+  top: 0%;
+  /* Position at the top of the circle */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4E43F1;
+  /* Color for the first dot */
+}
+
+.dot2 {
+  top: 85%;
+  /* Position at the bottom left of the circle */
+  left: 15%;
+  transform: translate(-50%, -50%);
+  background-color: #4E43F1;
+  /* Color for the second dot */
+}
+
+.dot3 {
+  top: 85%;
+  /* Position at the bottom right of the circle */
+  left: 85%;
+  transform: translate(-50%, -50%);
+  background-color: #4E43F1;
+  /* Color for the third dot */
+}
+
+@keyframes fillAnimation {
+  0% {
+    filter: grayscale(100%);
+  }
+
+  50% {
+    filter: grayscale(0%);
+  }
+
+  100% {
+    filter: grayscale(100%);
+  }
+}
+
+@keyframes spinAnimation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

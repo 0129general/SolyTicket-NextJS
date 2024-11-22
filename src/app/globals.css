@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  /* border: 1px solid blue !important; */
+}
+
+/* styles/global.css */
+:root {
+  --background-color: 0, 0, 0;
+  --text-color: rgb(var(--foreground-rgb));
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --color-text-primary: #17161A;
+  --color-text-input: #17161A;
+  --color-text-secondary: #17161A;
+  --hero-background-image: url(./assets/images/hero\ background.png);
+}
+
+[data-theme="dark"] {
+  --background-color: #17161a;
+  --text-color: 255, 255, 255;
+  --color-text-primary: #fff;
+  --color-text-input: #17161a;
+  --color-text-secondary: #fff;
+  --hero-background-image: url(./assets/images/hero\ background-dark.png);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--color-text-primary);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker__input-container {
+  width: 100%;
+}
+
+.custom-calendar {
+  width: 350px;
+  /* Set the width of the calendar */
+}
+
+.react-datepicker__month-container {
+  float: none;
+  width: 100%;
+}
+
+.react-datepicker__week {
+  display: flex;
+  justify-content: space-between;
+  /* Spread days across the week */
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  width: 48px;
+  /* Ensure full width of each cell */
+  /* height: 48px; */
+  /* line-height: 48px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transitions */
+}
+
+.react-datepicker__day-names {
+  font-weight: bold;
+  /* Highlight day names */
+  color: #6b7280;
+  /* Neutral gray for day names */
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+}
+
+.react-datepicker__current-month {
+  font-size: 1.25rem;
+  font-weight: bold;
+  /* Emphasize the current month */
+  color: #374151;
+  /* Dark gray for month label */
+  text-align: center;
+  width: 100%;
+  /* Ensure the month label is centered */
+}
+
+.react-datepicker__header {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #f9fafb;
+  /* Light background for header */
+  border-bottom: 1px solid #d1d5db;
+  /* Light border for separation */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #4f46e5;
+  /* Indigo background for selected day */
+  color: white;
+  /* White text on selected day */
+  border-radius: 50%;
+  /* Make selected day a circle */
+}
+
+.react-datepicker__day--today {
+  font-weight: bold;
+  /* Highlight today */
+  border: 1px solid #4f46e5;
+  /* Indigo border for today */
+  border-radius: 50%;
+  /* Ensure today is circular */
+}
+
+.react-datepicker__day--outside-month {
+  color: #9ca3af;
+  /* Light gray for days outside the current month */
+}
+
+/* Style for the entire header including month, navigation arrows, and background */
+.custom-calendar .react-datepicker__header {
+  background-color: #4f46e5;
+  /* Change this color to your preferred header color */
+  color: white;
+  /* Text color for the header */
+  padding: 10px;
+  border-top-left-radius: 0.375rem;
+  /* Slight rounding for the top left corner */
+  border-top-right-radius: 0.375rem;
+  /* Slight rounding for the top right corner */
+}
+
+/* .custom-calendar .react-datepicker__current-month,
+.custom-calendar .react-datepicker__month-year-dropdown {
+  color: white;
+
+  font-size: 1rem;
+} */
+
+.custom-calendar .react-datepicker__day-name {
+  color: white;
+  margin-top: 5px;
+  font-size: 1rem;
+}
+
+/* Styling for the navigation arrows */
+.custom-calendar .react-datepicker__navigation--previous,
+.custom-calendar .react-datepicker__navigation--next {
+  top: 10px;
+  line-height: 1.5;
+  border: none;
+  background: none;
+  color: white;
+  /* Ensure the arrows are visible against the header background */
+  cursor: pointer;
+  padding: 5px;
+}
+
+.custom-calendar .react-datepicker__navigation-icon {
+  width: 10px;
+  height: 10px;
+  fill: white;
+}
+
+
+
+
+
+/* asdasdasdad */
+
+.custom-calendar .react-datepicker__day--selected,
+.custom-calendar .react-datepicker__day--keyboard-selected {
+  background-color: #4f46e5;
+  /* Adjust this color as needed */
+  border-radius: 100%;
+  /* This makes the selection circular */
+  color: white;
+}
+
+.custom-calendar .react-datepicker__day:hover {
+  background-color: #4f46e5;
+  border-radius: 50%;
+  /* This ensures hover state is also circular */
+}
+
+.react-datepicker-wrapper .date-picker-wrapper {
+  width: 100%;
+}
+
+@layer base {
+  h1 {
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 80px;
+  }
+
+  h2 {
+    font-size: 46px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  h4 {
+    font-size: 20px;
+    font-weight: 200;
+  }
+
+  h5 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+  }
+
+  h6 {
+    color: var(--color-text-primary);
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  p {
+    color: var(--color-text-primary);
+  }
+
+  img {
+    display: inline-block !important;
+  }
+
+  .navbarSelects {
+    padding-right: 28px !important;
+  }
+
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 50px;
+      line-height: normal;
+    }
+
+    h3 {
+      font-size: 25px;
+    }
+
+    h4 {
+      font-size: 15px;
+    }
+  }
+}
+
+@layer components {
+  .cardzila {
+    background-color: theme("colors.black");
+    border-radius: theme("borderRadius.lg");
+    padding: theme("spacing.6");
+    box-shadow: theme("boxShadow.xl");
+  }
+
+  .BlueButton {
+    background-color: #4e43f1;
+    padding: 15px 40px;
+    color: #ffffff;
+    border-radius: 4px;
+  }
+
+  .whiteButton {
+    border: 2px solid #4e43f1;
+    background-color: white;
+    padding: 15px 40px;
+    color: #4e43f1;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .HeroSection {
+    background-image: var(--hero-background-image);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .newInput {
+    border-radius: 8px;
+    border: 1px 0px 0px 0px;
+    border: 1px solid #4e43f126;
+    width: 100%;
+    padding: 13px 20px;
+    margin-top: 10px;
+    background-color: transparent;
+    color: var(--color-text-input);
+    /* Add text color */
+  }
+
+  .dark .newInput {
+    background-color: #1a202c;
+    /* Dark background color */
+    color: #000000;
+    /* Light text color for dark mode */
+    border-color: #4e43f126;
+    /* Adjust border color for dark mode */
+  }
+
+  .borderBottom {
+    border-bottom: 1px solid #17161a;
+  }
+
+  .subHeadingText {
+    font-weight: 500;
+  }
+
+  .resContainer {
+    width: 90%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
